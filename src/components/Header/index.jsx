@@ -1,27 +1,16 @@
-import { Link } from "react-router-dom";
-
-function Nav() {
-  return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/products">Products</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
-      </ul>
-    </nav>
-  );
-}
+import Nav from "../Nav";
+import Cart from "../Cart";
+import * as S from "./Header.styles";
+import { CartStyle } from "../Cart/Cart.styles";
 
 export default function Header() {
   return (
-    <header>
+    <S.HeaderStyle>
+      <S.Logo>eCommerce</S.Logo>
       <Nav />
-    </header>
+      <CartStyle>
+        <Cart />
+      </CartStyle>
+    </S.HeaderStyle>
   );
 }
