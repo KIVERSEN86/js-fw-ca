@@ -8,7 +8,7 @@ export default function Nav() {
         <Link to="/">Home</Link>
       </S.A>
       <S.A>
-        <Link to="/products">Products</Link>
+        <Link to="/product">Product</Link>
       </S.A>
       <S.A>
         <Link to="/contact">Contact</Link>

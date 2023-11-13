@@ -1,16 +1,16 @@
 import Nav from "../Nav";
 import Cart from "../Cart";
 import * as S from "./Header.styles";
-import { CartStyle } from "../Cart/Cart.styles";
+import * as C from "../Cart/Cart.styles";
 
 export default function Header() {
   return (
-    <S.HeaderStyle>
+    <S.Header>
       <S.Logo>eCommerce</S.Logo>
       <Nav />
-      <CartStyle>
+      <C.Cart>
         <Cart />
-      </CartStyle>
-    </S.HeaderStyle>
+      </C.Cart>
+    </S.Header>
   );
 }

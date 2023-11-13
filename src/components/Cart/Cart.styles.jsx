@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
-export const CartStyle = styled.a`
+export const Cart = styled.a`
   margin-right: 20px;
 `;
