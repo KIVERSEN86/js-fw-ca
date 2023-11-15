@@ -3,7 +3,7 @@ import * as S from "./Nav.styles";
 
 export default function Nav() {
   return (
-    <S.NavStyle>
+    <S.Nav>
       <S.A>
         <Link to="/">Home</Link>
       </S.A>
@@ -13,6 +13,6 @@ export default function Nav() {
       <S.A>
         <Link to="/contact">Contact</Link>
       </S.A>
-    </S.NavStyle>
+    </S.Nav>
   );
 }

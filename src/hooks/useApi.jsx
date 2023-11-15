@@ -20,6 +20,7 @@ export default function useApi(url) {
         setIsLoading(false);
       }
     }
+
     getData();
   }, [url]);
   return { data, isLoading, isError };

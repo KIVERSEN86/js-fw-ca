@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const NavStyle = styled.nav`
+export const Nav = styled.nav`
   display: flex;
 `;
 
