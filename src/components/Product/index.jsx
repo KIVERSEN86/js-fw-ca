@@ -41,8 +41,9 @@ export default function Product() {
 
   return (
     <div>
-      <div>id: {data.id}</div>
-      <div>title: {data.title}</div>
+      <img src={data.imageUrl}></img>
+      <h3>{data.title}</h3>
+      <p>{data.description}</p>
     </div>
   );
 }
