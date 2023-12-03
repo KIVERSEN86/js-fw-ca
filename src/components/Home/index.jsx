@@ -17,16 +17,20 @@ export default function Home() {
   return (
     <>
       <C.Container>
-        {data.map((product) => (
-          <S.ProductContainer key={product.id}>
-            <Link to={`product/${product.id}`}>
-              <S.Image src={product.imageUrl}></S.Image>
-              <h3>{product.title}</h3>
-              <p>{product.price}</p>
-            </Link>
-            <S.Button>View more</S.Button>
-          </S.ProductContainer>
-        ))}
+        <S.HomeContainer>
+          {data.map((product) => (
+            <S.ProductContainer key={product.id}>
+              <Link to={`product/${product.id}`}>
+                <S.Image src={product.imageUrl}></S.Image>
+                <h3>{product.title}</h3>
+                <p>{product.price}</p>
+              </Link>
+              <S.StyledLink to={`product/${product.id}`}>
+                <S.Button>View more</S.Button>
+              </S.StyledLink>
+            </S.ProductContainer>
+          ))}
+        </S.HomeContainer>
       </C.Container>
     </>
   );
