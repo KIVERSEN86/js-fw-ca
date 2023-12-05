@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { DefaultButton } from "../Layout/Layout.styles";
 
 export const HomeContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 40px;
 `;
 
 export const ProductContainer = styled.div`
@@ -13,6 +13,7 @@ export const ProductContainer = styled.div`
   background-color: #fff8f6;
   display: flex;
   flex-direction: column;
+  border-radius: 10px;
 `;
 
 export const Image = styled.img`
@@ -22,15 +23,7 @@ export const Image = styled.img`
   border-radius: 10px 10px 0 0;
 `;
 
-export const Button = styled.button`
-  background-color: #e1d7f9;
-  background-image: linear-gradient(#baa7e6, #baa7e6);
-  background-size: 0 100%;
-  background-repeat: no-repeat;
-  transition: 0.4s;
-  padding: 8px;
-  border: none;
-  width: 100%;
+export const Button = styled(DefaultButton)`
   border-radius: 0 0 10px 10px;
 `;
 
