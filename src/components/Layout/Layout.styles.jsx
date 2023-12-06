@@ -19,14 +19,11 @@ export const DefaultButton = styled.button`
   padding: 8px;
   border: none;
   width: 100%;
+  font-family: "Roboto", sans-serif;
 
   &:hover {
     background-color: #baa7e6;
     cursor: pointer;
     background-size: 100% 100%;
   }
-`;
-
-export const DefaultH1 = styled.h1`
-  margin-top: 0;
 `;
