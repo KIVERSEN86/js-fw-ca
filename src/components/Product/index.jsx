@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Container } from "../Layout/Layout.styles";
+import * as S from "./Product.styles";
+import { DefaultHr } from "../Layout/Layout.styles";
 
 export default function Product() {
   const [data, setData] = useState(null);
@@ -39,11 +42,39 @@ export default function Product() {
 
   console.log(data);
 
-  return (
-    <div>
-      <img src={data.imageUrl}></img>
-      <h3>{data.title}</h3>
-      <p>{data.description}</p>
+  const reviewComponent = data.reviews.map((review, id) => (
+    <div key={id}>
+      <p>Rating: {review.rating}/5</p>
+      <h3>{review.username}</h3>
+      <p>{review.description}</p>
+      <DefaultHr />
     </div>
+  ));
+
+  function displayReviews() {
+    if (data.reviews.length > 0) {
+      return reviewComponent;
+    } else {
+      return <p>This product has no reviews yet.</p>;
+    }
+  }
+
+  return (
+    <Container>
+      <S.ProductContainer>
+        <S.Img src={data.imageUrl}></S.Img>
+        <S.DetailsContainer>
+          <h2>{data.title}</h2>
+          <p>{data.description}</p>
+          <p>{data.price}</p>
+          <S.Button>Add to cart</S.Button>
+          <DefaultHr />
+          <S.reviewContainer>
+            <h2>Reviews</h2>
+            {displayReviews()}
+          </S.reviewContainer>
+        </S.DetailsContainer>
+      </S.ProductContainer>
+    </Container>
   );
 }
