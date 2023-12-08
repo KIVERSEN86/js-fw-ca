@@ -27,3 +27,9 @@ export const DefaultButton = styled.button`
     background-size: 100% 100%;
   }
 `;
+
+export const Wrapper = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;

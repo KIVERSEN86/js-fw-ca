@@ -7,6 +7,7 @@ export const Nav = styled.nav`
 export const Ul = styled.ul`
   text-decoration: none;
   display: flex;
+  padding: 0;
 `;
 
 export const Li = styled.li`
