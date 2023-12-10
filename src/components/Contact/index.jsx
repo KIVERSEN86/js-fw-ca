@@ -48,7 +48,7 @@ export default function Contact() {
         <p>{errors.subject?.message}</p>
         <S.Input placeholder="Email" {...register("email")} />
         <p>{errors.email?.message}</p>
-        <S.Textarea placeholder="Body" {...register("body")} />
+        <S.Textarea placeholder="Message" {...register("body")} />
         <p>{errors.body?.message}</p>
         <S.Button type="submit">Submit</S.Button>
       </S.Form>
