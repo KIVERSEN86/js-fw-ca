@@ -3,11 +3,14 @@ import { useParams } from "react-router-dom";
 import { Container } from "../Layout/Layout.styles";
 import * as S from "./Product.styles";
 import { DefaultHr } from "../Layout/Layout.styles";
+import { CartContext } from "../Cart/CartState";
+import { useContext } from "react";
 
 export default function Product() {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const { addToCart } = useContext(CartContext);
   let { id } = useParams();
 
   useEffect(() => {
@@ -59,6 +62,19 @@ export default function Product() {
     }
   }
 
+  function displayPrice() {
+    if (data.discountedPrice < data.price) {
+      return (
+        <>
+          <S.NormalPrice>Before: {data.price}</S.NormalPrice>
+          <S.SalePrice>NOW: {data.discountedPrice}</S.SalePrice>
+        </>
+      );
+    } else {
+      return <p>{data.price}</p>;
+    }
+  }
+
   return (
     <Container>
       <S.ProductContainer>
@@ -66,8 +82,8 @@ export default function Product() {
         <S.DetailsContainer>
           <h2>{data.title}</h2>
           <p>{data.description}</p>
-          <p>{data.price}</p>
-          <S.Button>Add to cart</S.Button>
+          {displayPrice()}
+          <S.Button onClick={() => addToCart(data)}>Add to cart</S.Button>
           <DefaultHr />
           <S.reviewContainer>
             <h2>Reviews</h2>

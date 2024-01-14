@@ -18,7 +18,6 @@ const schema = yup
       .required("Please enter your subject"),
     email: yup
       .string()
-      .min(3, "Your email address must be at least three characters")
       .matches(/^(?!.*@[^,]*,)/, "This is not a valid email address")
       .required("Please enter a valid email address"),
     body: yup.string().min(3, "Your message needs to be a minimum of three characters").max(1000).required("Please enter a message"),
@@ -43,13 +42,13 @@ export default function Contact() {
       <S.Form onSubmit={handleSubmit(onSubmit)}>
         <h1>Contact us</h1>
         <S.Input placeholder="Full name" {...register("fullName")} />
-        <p>{errors.fullName?.message}</p>
+        <S.Error>{errors.fullName?.message}</S.Error>
         <S.Input placeholder="Subject" {...register("subject")} />
-        <p>{errors.subject?.message}</p>
+        <S.Error>{errors.subject?.message}</S.Error>
         <S.Input placeholder="Email" {...register("email")} />
-        <p>{errors.email?.message}</p>
+        <S.Error>{errors.email?.message}</S.Error>
         <S.Textarea placeholder="Message" {...register("body")} />
-        <p>{errors.body?.message}</p>
+        <S.Error>{errors.body?.message}</S.Error>
         <S.Button type="submit">Submit</S.Button>
       </S.Form>
     </L.Container>

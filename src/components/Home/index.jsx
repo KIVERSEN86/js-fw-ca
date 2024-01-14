@@ -1,13 +1,20 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import useApi from "../../hooks/useApi";
-import * as C from "../Layout/Layout.styles";
+import * as L from "../Layout/Layout.styles";
 import * as S from "../Home/Home.styles";
+import { SearchBar } from "../Search";
 
 export default function Home() {
   const { data, isLoading, isError } = useApi("https://api.noroff.dev/api/v1/online-shop");
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  useEffect(() => {
+    setFilteredProducts(data);
+  }, [data]);
 
   if (isLoading) {
-    return <div>Loading products</div>;
+    return <L.Loader />;
   }
 
   if (isError) {
@@ -16,9 +23,12 @@ export default function Home() {
 
   return (
     <>
-      <C.Container>
+      <L.Container>
+        <S.SearchContainer>
+          <SearchBar products={data} setFilteredProducts={setFilteredProducts} />
+        </S.SearchContainer>
         <S.HomeContainer>
-          {data.map((product) => (
+          {filteredProducts.map((product) => (
             <S.ProductContainer key={product.id}>
               <Link to={`product/${product.id}`}>
                 <S.Image src={product.imageUrl}></S.Image>
@@ -31,7 +41,7 @@ export default function Home() {
             </S.ProductContainer>
           ))}
         </S.HomeContainer>
-      </C.Container>
+      </L.Container>
     </>
   );
 }

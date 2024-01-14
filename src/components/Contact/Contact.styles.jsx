@@ -21,3 +21,7 @@ export const Button = styled(DefaultButton)`
   max-width: 350px;
   border-radius: 10px;
 `;
+
+export const Error = styled.p`
+  color: red;
+`;

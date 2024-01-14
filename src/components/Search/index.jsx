@@ -1,18 +1,23 @@
-import Home from "../Home";
+import { useState } from "react";
+import { SearchInput } from "../Home/Home.styles";
+import PropTypes from "prop-types";
 
-export function Search(data) {
-  const search = document.querySelector(".searchBar");
+const filterProducts = (searchProducts, products) => {
+  return products.filter((product) => product.title.toLowerCase().includes(searchProducts.toLowerCase()));
+};
 
-  search.onkeyup = function (event) {
-    const searchValue = event.target.value.trim().toLowerCase();
+export const SearchBar = ({ products, setFilteredProducts }) => {
+  const [searchInput, setSearchInput] = useState("");
 
-    const filterdProducts = data.filter(function (product) {
-      if (product.attributes.title.toLowerCase().startsWith(searchValue)) {
-        return true;
-      }
-    });
-
-    console.log(filterdProducts);
-    Home(filterdProducts);
+  const handleChange = (event) => {
+    setSearchInput(event.target.value);
+    setFilteredProducts(filterProducts(event.target.value, products));
   };
-}
+
+  return <SearchInput value={searchInput} onChange={handleChange} />;
+};
+
+SearchBar.propTypes = {
+  products: PropTypes.array.isRequired,
+  setFilteredProducts: PropTypes.func.isRequired,
+};

@@ -33,3 +33,22 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+export const Loader = styled.div`
+  margin: auto;
+  border: 10px solid blue;
+  border-top: 10px solid lightblue;
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+  animation: spin 1.4s linear infinite alternate;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`;

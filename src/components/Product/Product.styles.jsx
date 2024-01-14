@@ -15,8 +15,11 @@ export const Img = styled.img`
 `;
 
 export const DetailsContainer = styled.div`
-  margin-left: 20px;
   max-width: 350px;
+
+  @media (min-width: 500px) {
+    margin-left: 20px;
+  }
 `;
 
 export const Button = styled(DefaultButton)`
@@ -25,3 +28,11 @@ export const Button = styled(DefaultButton)`
 `;
 
 export const reviewContainer = styled.div``;
+
+export const NormalPrice = styled.p`
+  text-decoration: line-through;
+`;
+
+export const SalePrice = styled.p`
+  color: red;
+`;

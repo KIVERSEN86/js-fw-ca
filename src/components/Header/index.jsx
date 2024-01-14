@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <>
       <S.Header>
-        <S.Logo to="/">eCommerce</S.Logo>
+        <S.Logo to="/">eCom</S.Logo>
         <Nav />
         <A.Cart>
           <Cart />

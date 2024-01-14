@@ -9,9 +9,6 @@ export default function Nav() {
           <NavLink to="/">Home</NavLink>
         </S.Li>
         <S.Li>
-          <NavLink to="/about">About</NavLink>
-        </S.Li>
-        <S.Li>
           <NavLink to="/contact">Contact</NavLink>
         </S.Li>
       </S.Ul>

@@ -14,6 +14,10 @@ export const ProductContainer = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 10px;
+
+  &:hover {
+    box-shadow: 5px 5px 5px lightgrey;
+  }
 `;
 
 export const Image = styled.img`
@@ -36,4 +40,17 @@ export const StyledLink = styled(Link)`
     cursor: pointer;
     background-size: 100% 100%;
   }
+`;
+
+export const SearchInput = styled.input.attrs({
+  type: "search",
+  placeholder: "Search products",
+})`
+  padding: 5px 15px;
+  border-radius: 5px;
+`;
+
+export const SearchContainer = styled.div`
+  text-align: center;
+  margin-bottom: 10px;
 `;
