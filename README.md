@@ -4,8 +4,6 @@ To build an eCom store using React
 
 ## Description
 
-Add a more detailed description of what your project entails and set out to do.
-
 This project is a functionally eCom store.
 
 On the homepage you can see a list of products and you are able to search for a specific product.
