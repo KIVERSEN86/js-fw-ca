@@ -10,8 +10,6 @@ On the homepage you can see a list of products and you are able to search for a 
 
 There is individual pages for each product and you can add products to a cart.
 
-You can add some bullet points if you'd like to:
-
 - Homepage with list of products
 - Individual product page
 - Cart page
